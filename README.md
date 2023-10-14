@@ -98,6 +98,14 @@ We can check the data’s existence manually via Mongo Express.
 
 
 
+# part 2
+https://medium.com/@dogukannulu/data-engineering-end-to-end-project-part-2-airflow-kafka-cassandra-mongodb-docker-52a2ec7113de
 
+#Check Cassandra Data /scripts/check_cassandra.py  class CassandraConnector:
+In this section, we will check the specific e-mail address’ existence in the Cassandra table.
+
+We will connect to Cassandra and select from the corresponding table. If the related data exists in the table, we will create a dictionary with that data. If not, we will return an empty dictionary. Creating the dictionary even if it is empty is necessary because if it is empty, the EmailOperator task will fail. That will help us detect if the correct data exists or not and we will use the result of this script for the EmailOperator.
+
+We will use the function (check_cassandra_main())as our Airflow task. We will define the specific e-mail address and check the data’s existence.
 
 
